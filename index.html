@@ -4,27 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="staylesheet" href="css\styles.css">
+    <link rel="stylesheet" href="css\styles.css">
 </head>
 <body>
-    <nav class ="">
+    <nav>
         <header>
             <div class="logo-icon"></div>
         </header>
 
-        <section>
-            <a href="#">Home</a>
-            <a href="#">Our Profile</a>
-            <a href="#">Message Us</a>
+        <section class="nav-container">
+            <a href="#" class="nav-item">Home</a>
+            <a href="#our-profile" class="nav-item">Our Profile</a>
+            <a href="#message-us" class="nav-item">Message Us</a>
         </section>
     </nav>
+<hr/>
 
     <main>
+        <article>
+            <header>
+                <h1>Wecome User, to our WEBSITE</h1>
+            </header>
+            <p>Let's enjoy!</p>
+            <div class="banner-img"></div>
+        </article>
+<hr/>
+        <section id="our-profile">
+            <header>
+                <h1>Our Profile</h1>
+            </header>
+            
+            <section class="profile-container">
+                <div class="profile-item">
+                    <div class="profile-img"></div>
+                    <h2>Software Engineer</h2>
+                </div>
 
+                <div class="profile-item">
+                    <div class="profile-img"></div>
+                    <h2>Data Sience</h2>
+                </div>
+
+                <div class="profile-item">
+                    <div class="profile-img"></div>
+                    <h2>Mechine Learning & AI</h2>
+                </div>
+            </section>
+<hr/>
+
+        <section id="message-us">
+            <form>
+                <form action ="<?php echo $_SERVER["PHP_SELF"]; ?> <method ="post">
+                    <h1>Message Us</h1>
+                    <pre>
+Nama            <input type="text" name ="nama"><br>
+Tanggal Lahir   <input type="datetime" name="tanggal"><br>
+Jenis Kelamin   <input type="radio" name="jeniskel" value="laki-laki">Laki - Laki<input type="radio" name="jeniskel" value="perempuan">Perempuan          
+<p style="display:flex;">Pesan<span style="margin-left: 80px;" ><textarea name="pesan" rows="5" cols="20"></textarea></p>
+            
+            <input type="submit" value ="Submit">
+            </pre>
+            
+<?php
+            $nama = $_POST ["nama"];
+            $tanggal = $_POST ["tanggal"];
+            $jeniskel = $_POST ["jeniskel"];
+            $pesan = $_POST ["pesan"];
+            if(!empty($nama)){
+                echo "Nama : $nama<br>"; }
+            if(!empty($tanggal)){
+                echo "Tanggal Lahir : $tanggal<br>"; }
+            if(!empty($jeniskel)){
+                echo "Jenis Kelamin : $jeniskel<br>"; }
+            if(!empty($pesan)){
+                echo "Pesan : $pesan"; }
+?>
+
+            </form>
+<hr/>
+
+            <div></div>
+        </section>
     </main>
 
     <footer>
-
+        <p>Made by Eko Desi Setiawan</p>
     </footer>
 </body>
 </html>
